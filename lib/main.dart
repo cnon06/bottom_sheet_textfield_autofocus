@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+           // isScrollControlled: true,  // to make fullscreen
             backgroundColor: const Color(0x00737373),
               context: context, builder: (context) => Container(
                 decoration: const BoxDecoration(
@@ -59,7 +60,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),
                 ),
-              child: const Center(child: Text("showModalBottomSheet")),
+            
+              child: Column(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                 const SizedBox(
+                    width: 300,
+                    child:  TextField(
+                       autofocus: true,
+                    ),
+                  ),
+                ],
+              ),
               )
               
               
